@@ -1,0 +1,570 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		901750D51DA4855C00F7EAA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 901750D41DA4855C00F7EAA4 /* main.m */; };
+		901750D81DA4855C00F7EAA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 901750D71DA4855C00F7EAA4 /* AppDelegate.m */; };
+		901750E01DA4855C00F7EAA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 901750DF1DA4855C00F7EAA4 /* Assets.xcassets */; };
+		901750E31DA4855C00F7EAA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 901750E11DA4855C00F7EAA4 /* LaunchScreen.storyboard */; };
+		901750EE1DA4855C00F7EAA4 /* TZScrollViewPopGestureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 901750ED1DA4855C00F7EAA4 /* TZScrollViewPopGestureTests.m */; };
+		901750F91DA4855C00F7EAA4 /* TZScrollViewPopGestureUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 901750F81DA4855C00F7EAA4 /* TZScrollViewPopGestureUITests.m */; };
+		901751091DA4899D00F7EAA4 /* UINavigationController+TZPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 901751081DA4899D00F7EAA4 /* UINavigationController+TZPopGesture.m */; };
+		9017510D1DA48AE500F7EAA4 /* TZNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9017510C1DA48AE500F7EAA4 /* TZNaviController.m */; };
+		901751111DA48BFC00F7EAA4 /* TZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9017510F1DA48BFC00F7EAA4 /* TZHomeViewController.m */; };
+		901751151DA49DCE00F7EAA4 /* TZScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 901751141DA49DCE00F7EAA4 /* TZScrollViewController.m */; };
+		901751181DA49DEC00F7EAA4 /* TZCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 901751171DA49DEC00F7EAA4 /* TZCollectionViewController.m */; };
+		9017511B1DA49DFC00F7EAA4 /* TZMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9017511A1DA49DFC00F7EAA4 /* TZMapViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		901750EA1DA4855C00F7EAA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 901750C81DA4855C00F7EAA4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 901750CF1DA4855C00F7EAA4;
+			remoteInfo = TZScrollViewPopGesture;
+		};
+		901750F51DA4855C00F7EAA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 901750C81DA4855C00F7EAA4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 901750CF1DA4855C00F7EAA4;
+			remoteInfo = TZScrollViewPopGesture;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		901750D01DA4855C00F7EAA4 /* TZScrollViewPopGesture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TZScrollViewPopGesture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		901750D41DA4855C00F7EAA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		901750D61DA4855C00F7EAA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		901750D71DA4855C00F7EAA4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		901750DF1DA4855C00F7EAA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		901750E21DA4855C00F7EAA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		901750E41DA4855C00F7EAA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		901750E91DA4855C00F7EAA4 /* TZScrollViewPopGestureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TZScrollViewPopGestureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		901750ED1DA4855C00F7EAA4 /* TZScrollViewPopGestureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TZScrollViewPopGestureTests.m; sourceTree = "<group>"; };
+		901750EF1DA4855C00F7EAA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		901750F41DA4855C00F7EAA4 /* TZScrollViewPopGestureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TZScrollViewPopGestureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		901750F81DA4855C00F7EAA4 /* TZScrollViewPopGestureUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TZScrollViewPopGestureUITests.m; sourceTree = "<group>"; };
+		901750FA1DA4855C00F7EAA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		901751071DA4899D00F7EAA4 /* UINavigationController+TZPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+TZPopGesture.h"; sourceTree = "<group>"; };
+		901751081DA4899D00F7EAA4 /* UINavigationController+TZPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+TZPopGesture.m"; sourceTree = "<group>"; };
+		9017510B1DA48AE500F7EAA4 /* TZNaviController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZNaviController.h; sourceTree = "<group>"; };
+		9017510C1DA48AE500F7EAA4 /* TZNaviController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZNaviController.m; sourceTree = "<group>"; };
+		9017510E1DA48BFC00F7EAA4 /* TZHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZHomeViewController.h; sourceTree = "<group>"; };
+		9017510F1DA48BFC00F7EAA4 /* TZHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZHomeViewController.m; sourceTree = "<group>"; };
+		901751131DA49DCE00F7EAA4 /* TZScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZScrollViewController.h; sourceTree = "<group>"; };
+		901751141DA49DCE00F7EAA4 /* TZScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZScrollViewController.m; sourceTree = "<group>"; };
+		901751161DA49DEC00F7EAA4 /* TZCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZCollectionViewController.h; sourceTree = "<group>"; };
+		901751171DA49DEC00F7EAA4 /* TZCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZCollectionViewController.m; sourceTree = "<group>"; };
+		901751191DA49DFC00F7EAA4 /* TZMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZMapViewController.h; sourceTree = "<group>"; };
+		9017511A1DA49DFC00F7EAA4 /* TZMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZMapViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		901750CD1DA4855C00F7EAA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		901750E61DA4855C00F7EAA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		901750F11DA4855C00F7EAA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		901750C71DA4855C00F7EAA4 = {
+			isa = PBXGroup;
+			children = (
+				901750D21DA4855C00F7EAA4 /* TZScrollViewPopGesture */,
+				901750EC1DA4855C00F7EAA4 /* TZScrollViewPopGestureTests */,
+				901750F71DA4855C00F7EAA4 /* TZScrollViewPopGestureUITests */,
+				901750D11DA4855C00F7EAA4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		901750D11DA4855C00F7EAA4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				901750D01DA4855C00F7EAA4 /* TZScrollViewPopGesture.app */,
+				901750E91DA4855C00F7EAA4 /* TZScrollViewPopGestureTests.xctest */,
+				901750F41DA4855C00F7EAA4 /* TZScrollViewPopGestureUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		901750D21DA4855C00F7EAA4 /* TZScrollViewPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+				901750D61DA4855C00F7EAA4 /* AppDelegate.h */,
+				901750D71DA4855C00F7EAA4 /* AppDelegate.m */,
+				901751061DA4899D00F7EAA4 /* TZScrollViewPopGesture */,
+				9017510A1DA48AB200F7EAA4 /* Demo */,
+				901750DF1DA4855C00F7EAA4 /* Assets.xcassets */,
+				901750E11DA4855C00F7EAA4 /* LaunchScreen.storyboard */,
+				901750E41DA4855C00F7EAA4 /* Info.plist */,
+				901750D31DA4855C00F7EAA4 /* Supporting Files */,
+			);
+			path = TZScrollViewPopGesture;
+			sourceTree = "<group>";
+		};
+		901750D31DA4855C00F7EAA4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				901750D41DA4855C00F7EAA4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		901750EC1DA4855C00F7EAA4 /* TZScrollViewPopGestureTests */ = {
+			isa = PBXGroup;
+			children = (
+				901750ED1DA4855C00F7EAA4 /* TZScrollViewPopGestureTests.m */,
+				901750EF1DA4855C00F7EAA4 /* Info.plist */,
+			);
+			path = TZScrollViewPopGestureTests;
+			sourceTree = "<group>";
+		};
+		901750F71DA4855C00F7EAA4 /* TZScrollViewPopGestureUITests */ = {
+			isa = PBXGroup;
+			children = (
+				901750F81DA4855C00F7EAA4 /* TZScrollViewPopGestureUITests.m */,
+				901750FA1DA4855C00F7EAA4 /* Info.plist */,
+			);
+			path = TZScrollViewPopGestureUITests;
+			sourceTree = "<group>";
+		};
+		901751061DA4899D00F7EAA4 /* TZScrollViewPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+				901751071DA4899D00F7EAA4 /* UINavigationController+TZPopGesture.h */,
+				901751081DA4899D00F7EAA4 /* UINavigationController+TZPopGesture.m */,
+			);
+			path = TZScrollViewPopGesture;
+			sourceTree = "<group>";
+		};
+		9017510A1DA48AB200F7EAA4 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				9017510B1DA48AE500F7EAA4 /* TZNaviController.h */,
+				9017510C1DA48AE500F7EAA4 /* TZNaviController.m */,
+				9017510E1DA48BFC00F7EAA4 /* TZHomeViewController.h */,
+				9017510F1DA48BFC00F7EAA4 /* TZHomeViewController.m */,
+				901751131DA49DCE00F7EAA4 /* TZScrollViewController.h */,
+				901751141DA49DCE00F7EAA4 /* TZScrollViewController.m */,
+				901751161DA49DEC00F7EAA4 /* TZCollectionViewController.h */,
+				901751171DA49DEC00F7EAA4 /* TZCollectionViewController.m */,
+				901751191DA49DFC00F7EAA4 /* TZMapViewController.h */,
+				9017511A1DA49DFC00F7EAA4 /* TZMapViewController.m */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		901750CF1DA4855C00F7EAA4 /* TZScrollViewPopGesture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 901750FD1DA4855C00F7EAA4 /* Build configuration list for PBXNativeTarget "TZScrollViewPopGesture" */;
+			buildPhases = (
+				901750CC1DA4855C00F7EAA4 /* Sources */,
+				901750CD1DA4855C00F7EAA4 /* Frameworks */,
+				901750CE1DA4855C00F7EAA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TZScrollViewPopGesture;
+			productName = TZScrollViewPopGesture;
+			productReference = 901750D01DA4855C00F7EAA4 /* TZScrollViewPopGesture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		901750E81DA4855C00F7EAA4 /* TZScrollViewPopGestureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 901751001DA4855C00F7EAA4 /* Build configuration list for PBXNativeTarget "TZScrollViewPopGestureTests" */;
+			buildPhases = (
+				901750E51DA4855C00F7EAA4 /* Sources */,
+				901750E61DA4855C00F7EAA4 /* Frameworks */,
+				901750E71DA4855C00F7EAA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				901750EB1DA4855C00F7EAA4 /* PBXTargetDependency */,
+			);
+			name = TZScrollViewPopGestureTests;
+			productName = TZScrollViewPopGestureTests;
+			productReference = 901750E91DA4855C00F7EAA4 /* TZScrollViewPopGestureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		901750F31DA4855C00F7EAA4 /* TZScrollViewPopGestureUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 901751031DA4855C00F7EAA4 /* Build configuration list for PBXNativeTarget "TZScrollViewPopGestureUITests" */;
+			buildPhases = (
+				901750F01DA4855C00F7EAA4 /* Sources */,
+				901750F11DA4855C00F7EAA4 /* Frameworks */,
+				901750F21DA4855C00F7EAA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				901750F61DA4855C00F7EAA4 /* PBXTargetDependency */,
+			);
+			name = TZScrollViewPopGestureUITests;
+			productName = TZScrollViewPopGestureUITests;
+			productReference = 901750F41DA4855C00F7EAA4 /* TZScrollViewPopGestureUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		901750C81DA4855C00F7EAA4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "谭真";
+				TargetAttributes = {
+					901750CF1DA4855C00F7EAA4 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = ZH74J4ERQH;
+						ProvisioningStyle = Automatic;
+					};
+					901750E81DA4855C00F7EAA4 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 901750CF1DA4855C00F7EAA4;
+					};
+					901750F31DA4855C00F7EAA4 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 901750CF1DA4855C00F7EAA4;
+					};
+				};
+			};
+			buildConfigurationList = 901750CB1DA4855C00F7EAA4 /* Build configuration list for PBXProject "TZScrollViewPopGesture" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 901750C71DA4855C00F7EAA4;
+			productRefGroup = 901750D11DA4855C00F7EAA4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				901750CF1DA4855C00F7EAA4 /* TZScrollViewPopGesture */,
+				901750E81DA4855C00F7EAA4 /* TZScrollViewPopGestureTests */,
+				901750F31DA4855C00F7EAA4 /* TZScrollViewPopGestureUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		901750CE1DA4855C00F7EAA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				901750E31DA4855C00F7EAA4 /* LaunchScreen.storyboard in Resources */,
+				901750E01DA4855C00F7EAA4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		901750E71DA4855C00F7EAA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		901750F21DA4855C00F7EAA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		901750CC1DA4855C00F7EAA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				901751091DA4899D00F7EAA4 /* UINavigationController+TZPopGesture.m in Sources */,
+				9017510D1DA48AE500F7EAA4 /* TZNaviController.m in Sources */,
+				901751181DA49DEC00F7EAA4 /* TZCollectionViewController.m in Sources */,
+				9017511B1DA49DFC00F7EAA4 /* TZMapViewController.m in Sources */,
+				901750D81DA4855C00F7EAA4 /* AppDelegate.m in Sources */,
+				901751111DA48BFC00F7EAA4 /* TZHomeViewController.m in Sources */,
+				901750D51DA4855C00F7EAA4 /* main.m in Sources */,
+				901751151DA49DCE00F7EAA4 /* TZScrollViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		901750E51DA4855C00F7EAA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				901750EE1DA4855C00F7EAA4 /* TZScrollViewPopGestureTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		901750F01DA4855C00F7EAA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				901750F91DA4855C00F7EAA4 /* TZScrollViewPopGestureUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		901750EB1DA4855C00F7EAA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 901750CF1DA4855C00F7EAA4 /* TZScrollViewPopGesture */;
+			targetProxy = 901750EA1DA4855C00F7EAA4 /* PBXContainerItemProxy */;
+		};
+		901750F61DA4855C00F7EAA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 901750CF1DA4855C00F7EAA4 /* TZScrollViewPopGesture */;
+			targetProxy = 901750F51DA4855C00F7EAA4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		901750E11DA4855C00F7EAA4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				901750E21DA4855C00F7EAA4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		901750FB1DA4855C00F7EAA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		901750FC1DA4855C00F7EAA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		901750FE1DA4855C00F7EAA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZH74J4ERQH;
+				INFOPLIST_FILE = TZScrollViewPopGesture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tanzhen.TZScrollViewPopGesture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		901750FF1DA4855C00F7EAA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZH74J4ERQH;
+				INFOPLIST_FILE = TZScrollViewPopGesture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tanzhen.TZScrollViewPopGesture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		901751011DA4855C00F7EAA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TZScrollViewPopGestureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tanzhen.TZScrollViewPopGestureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TZScrollViewPopGesture.app/TZScrollViewPopGesture";
+			};
+			name = Debug;
+		};
+		901751021DA4855C00F7EAA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TZScrollViewPopGestureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tanzhen.TZScrollViewPopGestureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TZScrollViewPopGesture.app/TZScrollViewPopGesture";
+			};
+			name = Release;
+		};
+		901751041DA4855C00F7EAA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TZScrollViewPopGestureUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tanzhen.TZScrollViewPopGestureUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TZScrollViewPopGesture;
+			};
+			name = Debug;
+		};
+		901751051DA4855C00F7EAA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TZScrollViewPopGestureUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tanzhen.TZScrollViewPopGestureUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TZScrollViewPopGesture;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		901750CB1DA4855C00F7EAA4 /* Build configuration list for PBXProject "TZScrollViewPopGesture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				901750FB1DA4855C00F7EAA4 /* Debug */,
+				901750FC1DA4855C00F7EAA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		901750FD1DA4855C00F7EAA4 /* Build configuration list for PBXNativeTarget "TZScrollViewPopGesture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				901750FE1DA4855C00F7EAA4 /* Debug */,
+				901750FF1DA4855C00F7EAA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		901751001DA4855C00F7EAA4 /* Build configuration list for PBXNativeTarget "TZScrollViewPopGestureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				901751011DA4855C00F7EAA4 /* Debug */,
+				901751021DA4855C00F7EAA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		901751031DA4855C00F7EAA4 /* Build configuration list for PBXNativeTarget "TZScrollViewPopGestureUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				901751041DA4855C00F7EAA4 /* Debug */,
+				901751051DA4855C00F7EAA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 901750C81DA4855C00F7EAA4 /* Project object */;
+}
