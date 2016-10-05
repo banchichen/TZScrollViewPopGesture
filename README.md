@@ -10,7 +10,6 @@
 
 ## 二. Example 例子
 
-  // scrollView需要支持侧滑返回
   [self tz_addPopGestureToView:scrollView];
 
 ## 三. Requirements 要求
