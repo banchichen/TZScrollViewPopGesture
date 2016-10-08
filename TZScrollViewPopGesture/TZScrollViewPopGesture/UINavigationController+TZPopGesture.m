@@ -9,6 +9,11 @@
 #import "UINavigationController+TZPopGesture.h"
 #import <objc/runtime.h>
 
+@interface UINavigationController (TZPopGesturePrivate)
+@property (nonatomic, weak, readonly) id tz_naviDelegate;
+@property (nonatomic, weak, readonly) id tz_popDelegate;
+@end
+
 @implementation UINavigationController (TZPopGesture)
 
 + (void)load {
@@ -20,24 +25,40 @@
 - (void)tzPop_viewWillAppear:(BOOL)animated {
     [self tzPop_viewWillAppear:animated];
     // 只是为了触发tz_PopDelegate的get方法，获取到原始的interactivePopGestureRecognizer的delegate
-    [self.tz_PopDelegate class];
+    [self.tz_popDelegate class];
+    // 获取导航栏的代理
+    [self.tz_naviDelegate class];
     self.delegate = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.delegate = self.tz_naviDelegate;
+    });
 }
 
-- (id)tz_PopDelegate {
-    id tz_PopDelegate = objc_getAssociatedObject(self, _cmd);
-    if (!tz_PopDelegate) {
-        tz_PopDelegate = self.interactivePopGestureRecognizer.delegate;
-        objc_setAssociatedObject(self, _cmd, tz_PopDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (id)tz_popDelegate {
+    id tz_popDelegate = objc_getAssociatedObject(self, _cmd);
+    if (!tz_popDelegate) {
+        tz_popDelegate = self.interactivePopGestureRecognizer.delegate;
+        objc_setAssociatedObject(self, _cmd, tz_popDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    return tz_PopDelegate;
+    return tz_popDelegate;
+}
+
+- (id)tz_naviDelegate {
+    id tz_naviDelegate = objc_getAssociatedObject(self, _cmd);
+    if (!tz_naviDelegate) {
+        tz_naviDelegate = self.delegate;
+        if (tz_naviDelegate) {
+            objc_setAssociatedObject(self, _cmd, tz_naviDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        }
+    }
+    return tz_naviDelegate;
 }
 
 - (UIPanGestureRecognizer *)tz_popGestureRecognizer {
     UIPanGestureRecognizer *pan = objc_getAssociatedObject(self, _cmd);
     if (!pan) {
         // 侧滑返回手势 手势触发的时候，让target执行action
-        id target = self.tz_PopDelegate;
+        id target = self.tz_popDelegate;
         SEL action = NSSelectorFromString(@"handleNavigationTransition:");
         pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:action];
         pan.maximumNumberOfTouches = 1;
@@ -76,7 +97,7 @@
     // 让系统的侧滑返回生效
     self.interactivePopGestureRecognizer.enabled = YES;
     if (viewController == self.viewControllers[0]) {
-        self.interactivePopGestureRecognizer.delegate = self.tz_PopDelegate; // 不支持侧滑
+        self.interactivePopGestureRecognizer.delegate = self.tz_popDelegate; // 不支持侧滑
     } else {
         self.interactivePopGestureRecognizer.delegate = nil; // 支持侧滑
     }

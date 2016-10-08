@@ -11,7 +11,6 @@
 @interface UINavigationController (TZPopGesture)<UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic, strong, readonly) UIPanGestureRecognizer *tz_popGestureRecognizer;
-@property (nonatomic, weak, readonly) id tz_PopDelegate;
 
 @end
 
