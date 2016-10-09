@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6DD64C6E1DAA57C20088D608 /* TZPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD64C6D1DAA57C20088D608 /* TZPageViewController.m */; };
 		901750D51DA4855C00F7EAA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 901750D41DA4855C00F7EAA4 /* main.m */; };
 		901750D81DA4855C00F7EAA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 901750D71DA4855C00F7EAA4 /* AppDelegate.m */; };
 		901750E01DA4855C00F7EAA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 901750DF1DA4855C00F7EAA4 /* Assets.xcassets */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6DD64C6C1DAA57C20088D608 /* TZPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPageViewController.h; sourceTree = "<group>"; };
+		6DD64C6D1DAA57C20088D608 /* TZPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZPageViewController.m; sourceTree = "<group>"; };
 		901750D01DA4855C00F7EAA4 /* TZScrollViewPopGesture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TZScrollViewPopGesture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		901750D41DA4855C00F7EAA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		901750D61DA4855C00F7EAA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 				901751171DA49DEC00F7EAA4 /* TZCollectionViewController.m */,
 				901751191DA49DFC00F7EAA4 /* TZMapViewController.h */,
 				9017511A1DA49DFC00F7EAA4 /* TZMapViewController.m */,
+				6DD64C6C1DAA57C20088D608 /* TZPageViewController.h */,
+				6DD64C6D1DAA57C20088D608 /* TZPageViewController.m */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 				901751181DA49DEC00F7EAA4 /* TZCollectionViewController.m in Sources */,
 				9017511B1DA49DFC00F7EAA4 /* TZMapViewController.m in Sources */,
 				901750D81DA4855C00F7EAA4 /* AppDelegate.m in Sources */,
+				6DD64C6E1DAA57C20088D608 /* TZPageViewController.m in Sources */,
 				901751111DA48BFC00F7EAA4 /* TZHomeViewController.m in Sources */,
 				901750D51DA4855C00F7EAA4 /* main.m in Sources */,
 				901751151DA49DCE00F7EAA4 /* TZScrollViewController.m in Sources */,

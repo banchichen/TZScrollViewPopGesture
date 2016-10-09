@@ -54,21 +54,6 @@
     return tz_naviDelegate;
 }
 
-- (UIPanGestureRecognizer *)tz_popGestureRecognizer {
-    UIPanGestureRecognizer *pan = objc_getAssociatedObject(self, _cmd);
-    if (!pan) {
-        // 侧滑返回手势 手势触发的时候，让target执行action
-        id target = self.tz_popDelegate;
-        SEL action = NSSelectorFromString(@"handleNavigationTransition:");
-        pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:action];
-        pan.maximumNumberOfTouches = 1;
-        pan.delegate = self;
-        self.interactivePopGestureRecognizer.enabled = NO;
-        objc_setAssociatedObject(self, _cmd, pan, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-    return pan;
-}
-
 #pragma mark - UIGestureRecognizerDelegate
 
 - (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer {
@@ -107,6 +92,9 @@
 
 
 
+@interface UIViewController (TZPopGesturePrivate)
+@property (nonatomic, strong, readonly) UIPanGestureRecognizer *tz_popGestureRecognizer;
+@end
 
 @implementation UIViewController (TZPopGesture)
 
@@ -120,6 +108,21 @@
         UIPanGestureRecognizer *pan = self.navigationController.tz_popGestureRecognizer;
         [view addGestureRecognizer:pan];
     }
+}
+
+- (UIPanGestureRecognizer *)tz_popGestureRecognizer {
+    UIPanGestureRecognizer *pan = objc_getAssociatedObject(self, _cmd);
+    if (!pan) {
+        // 侧滑返回手势 手势触发的时候，让target执行action
+        id target = self.navigationController.tz_popDelegate;
+        SEL action = NSSelectorFromString(@"handleNavigationTransition:");
+        pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:action];
+        pan.maximumNumberOfTouches = 1;
+        pan.delegate = self.navigationController;
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+        objc_setAssociatedObject(self, _cmd, pan, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return pan;
 }
 
 @end

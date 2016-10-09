@@ -10,6 +10,7 @@
 #import "TZScrollViewController.h"
 #import "TZCollectionViewController.h"
 #import "TZMapViewController.h"
+#import "TZPageViewController.h"
 
 @interface TZHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -25,7 +26,7 @@
 }
 
 - (void)configTableView {
-    _cellTitles = @[@"UIScrollView界面",@"UICollectionView界面",@"地图界面"];
+    _cellTitles = @[@"UIScrollView界面",@"UICollectionView界面",@"地图界面",@"UIPageViewController界面"];
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.tableFooterView = [UIView new];
     self.tableView.delegate = self;
@@ -37,7 +38,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return _cellTitles.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -55,6 +56,8 @@
         vc = [[TZCollectionViewController alloc] init];
     } else if (indexPath.row == 2) {
         vc = [[TZMapViewController alloc] init];
+    } else if (indexPath.row == 3) {
+        vc = [[TZPageViewController alloc] init];
     }
     vc.navigationItem.title = _cellTitles[indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];
