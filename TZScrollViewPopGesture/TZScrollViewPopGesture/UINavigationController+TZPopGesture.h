@@ -15,6 +15,8 @@
 
 @interface UIViewController (TZPopGesture)
 
+@property (nonatomic, strong) UINavigationController *tz_naviVc;
+
 - (void)tz_addPopGestureToView:(UIView *)view;
 
 @end

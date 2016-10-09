@@ -11,7 +11,6 @@
 #import "UINavigationController+TZPopGesture.h"
 
 @interface TZPageViewController ()<UIPageViewControllerDelegate, UIPageViewControllerDataSource>
-@property(nonatomic, assign) NSInteger index;
 @property(nonatomic, strong) NSArray *viewControlls;
 @property(nonatomic, strong) UIPageViewController *pageVC;
 @end
@@ -22,12 +21,11 @@
     [super viewDidLoad];
     NSDictionary *options = @{UIPageViewControllerOptionSpineLocationKey : @(UIPageViewControllerSpineLocationMin)};
     self.pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:options];
-    [self configChildViewControllers];
     self.pageVC.dataSource = self;
     self.pageVC.delegate = self;
-    
+    [self configChildViewControllers];
+
     self.pageVC.view.frame = self.view.bounds;
-    [self addChildViewController:self.pageVC];
     [self.view addSubview:self.pageVC.view];
     [self.pageVC setViewControllers:@[self.viewControlls[0]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:^(BOOL finished) {
         
@@ -36,13 +34,22 @@
 
 - (void)configChildViewControllers {
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    for(NSInteger i = 0; i < 6; i++) {
+    for(NSInteger i = 0; i < 4; i++) {
         TZSubScrollViewController *vc = [[TZSubScrollViewController alloc] init];
-        vc.view.tag = i;
+        vc.naviVc = self.navigationController;
         [array addObject:vc];
     }
     self.viewControlls = array;
-    self.index = 0;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    for (TZSubScrollViewController *vc in self.viewControlls) {
+        if (!vc.naviVc) {
+            vc.naviVc = self.navigationController;
+            [self tz_addPopGestureToView:vc.scrollView];
+        }
+    }
 }
 
 #pragma mark-- UIPageViewControllerDataSource
@@ -53,20 +60,18 @@
         return nil;
     }
     TZSubScrollViewController *vc = self.viewControlls[index -1];
+    vc.tz_naviVc = self.navigationController;
     return vc;
 }
 
 - (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     NSInteger index = [self.viewControlls indexOfObject:viewController];
-    if(index == self.viewControlls.count -1) {
+    if (index == self.viewControlls.count - 1) {
         return nil;
     }
     TZSubScrollViewController *vc = self.viewControlls[index + 1];
+    vc.tz_naviVc = self.navigationController;
     return vc;
-}
-
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController NS_AVAILABLE_IOS(6_0) {
-    return self.viewControlls.count;
 }
 
 @end
@@ -81,15 +86,28 @@
 }
 
 - (void)configScrollView {
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 64)];
-    scrollView.pagingEnabled = YES;
-    scrollView.alwaysBounceHorizontal = YES;
-    CGFloat rgb = 40 * (self.view.tag + 1);
-    scrollView.backgroundColor = [UIColor colorWithRed:rgb green:rgb blue:rgb alpha:1.0];
-    [self.view addSubview:scrollView];
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 64)];
+    _scrollView.pagingEnabled = YES;
+    CGFloat rgb = arc4random_uniform(200) / 256.0 + 0.2;
+    _scrollView.backgroundColor = [UIColor colorWithRed:rgb green:rgb blue:rgb * 0.5 alpha:1.0];
+    [self.view addSubview:_scrollView];
     
-    // scrollView需要支持侧滑返回
-    [self tz_addPopGestureToView:scrollView];
+    UILabel *titleLabel = [[UILabel alloc] init];
+    titleLabel.frame = CGRectMake(0, 0, _scrollView.frame.size.width, _scrollView.frame.size.height);
+    [self.view addSubview:titleLabel];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.text = [NSString stringWithFormat:@"我的背景色RGB值是%f",rgb];
+}
+
+- (void)setNaviVc:(UINavigationController *)naviVc {
+    _naviVc = naviVc;
+    self.tz_naviVc = self.naviVc;
+//    [self tz_addPopGestureToView:_scrollView];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+//    [self tz_addPopGestureToView:_scrollView];
 }
 
 @end
