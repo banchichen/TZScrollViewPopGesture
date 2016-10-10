@@ -15,5 +15,4 @@
 
 @interface TZSubScrollViewController : UIViewController
 @property (nonatomic, strong) UIScrollView *scrollView;
-@property (nonatomic, strong) UINavigationController *naviVc;
 @end

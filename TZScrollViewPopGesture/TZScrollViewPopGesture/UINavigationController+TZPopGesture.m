@@ -4,7 +4,7 @@
 //
 //  Created by 谭真 on 2016/10/4.
 //  Copyright © 2016年 谭真. All rights reserved.
-//  2016.10.05 1.0.0版本
+//  2016.10.10 1.0.2版本
 
 #import "UINavigationController+TZPopGesture.h"
 #import <objc/runtime.h>
@@ -67,7 +67,7 @@
     CGPoint location = [gestureRecognizer locationInView:self.view];
     CGPoint offSet = [gestureRecognizer translationInView:gestureRecognizer.view];
     BOOL ret = (0 < offSet.x && location.x <= 40);
-    NSLog(@"%@ %@",NSStringFromCGPoint(location),NSStringFromCGPoint(offSet));
+    // NSLog(@"%@ %@",NSStringFromCGPoint(location),NSStringFromCGPoint(offSet));
     return ret;
 }
 
@@ -100,38 +100,20 @@
 
 - (void)tz_addPopGestureToView:(UIView *)view {
     if (!view) return;
-    if (!self.navigationController && !self.tz_naviVc) {
+    if (!self.navigationController) {
         // 在控制器转场的时候，self.navigationController可能是nil,这里用GCD和递归来处理这种情况
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self tz_addPopGestureToView:view];
         });
-        NSLog(@"添加手势失败");
     } else {
         UIPanGestureRecognizer *pan = self.tz_popGestureRecognizer;
         if (![view.gestureRecognizers containsObject:pan]) {
             [view addGestureRecognizer:pan];
-            NSLog(@"添加手势成功");
         }
     }
 }
 
-- (UINavigationController *)tz_naviVc {
-    UINavigationController *tz_naviVc = objc_getAssociatedObject(self, _cmd);
-    NSLog(@"导航栏是%@",tz_naviVc);
-    return tz_naviVc;
-}
-
-- (void)setTz_naviVc:(UINavigationController *)tz_naviVc {
-    if (tz_naviVc) {
-        objc_setAssociatedObject(self, _cmd, tz_naviVc, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-}
-
 - (UIPanGestureRecognizer *)tz_popGestureRecognizer {
-    UINavigationController *naviVc = self.navigationController;
-    if (!naviVc) {
-        naviVc = self.tz_naviVc;
-    }
     UIPanGestureRecognizer *pan = objc_getAssociatedObject(self, _cmd);
     if (!pan) {
         // 侧滑返回手势 手势触发的时候，让target执行action
@@ -142,7 +124,6 @@
         pan.delegate = self.navigationController;
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
         objc_setAssociatedObject(self, _cmd, pan, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        NSLog(@"创建一个手势%@",pan);
     }
     return pan;
 }
