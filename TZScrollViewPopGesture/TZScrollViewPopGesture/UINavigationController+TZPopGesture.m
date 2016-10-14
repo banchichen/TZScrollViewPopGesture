@@ -4,7 +4,7 @@
 //
 //  Created by 谭真 on 2016/10/4.
 //  Copyright © 2016年 谭真. All rights reserved.
-//  2016.10.10 1.0.2版本
+//  2016.10.14 1.0.3版本
 
 #import "UINavigationController+TZPopGesture.h"
 #import <objc/runtime.h>
@@ -81,10 +81,12 @@
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     // 让系统的侧滑返回生效
     self.interactivePopGestureRecognizer.enabled = YES;
-    if (viewController == self.viewControllers[0]) {
-        self.interactivePopGestureRecognizer.delegate = self.tz_popDelegate; // 不支持侧滑
-    } else {
-        self.interactivePopGestureRecognizer.delegate = nil; // 支持侧滑
+    if (self.childViewControllers.count > 0) {
+        if (viewController == self.childViewControllers[0]) {
+            self.interactivePopGestureRecognizer.delegate = self.tz_popDelegate; // 不支持侧滑
+        } else {
+            self.interactivePopGestureRecognizer.delegate = nil; // 支持侧滑
+        }
     }
 }
 
