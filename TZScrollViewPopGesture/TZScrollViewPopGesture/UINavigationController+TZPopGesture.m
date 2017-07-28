@@ -4,7 +4,7 @@
 //
 //  Created by 谭真 on 2016/10/4.
 //  Copyright © 2016年 谭真. All rights reserved.
-//  2017.07.28 1.0.5版本
+//  2017.07.28 1.0.6版本
 
 #import "UINavigationController+TZPopGesture.h"
 #import <objc/runtime.h>
@@ -88,7 +88,9 @@
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     // 转发给业务方代理
     if (self.tz_naviDelegate && ![self.tz_naviDelegate isEqual:self]) {
-        [self.tz_naviDelegate navigationController:navigationController didShowViewController:viewController animated:animated];
+        if ([self.tz_naviDelegate respondsToSelector:@selector(navigationController:didShowViewController:animated:)]) {
+            [self.tz_naviDelegate navigationController:navigationController didShowViewController:viewController animated:animated];
+        }
     }
     // 让系统的侧滑返回生效
     self.interactivePopGestureRecognizer.enabled = YES;
@@ -104,7 +106,9 @@
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     // 转发给业务方代理
     if (self.tz_naviDelegate && ![self.tz_naviDelegate isEqual:self]) {
-        [self.tz_naviDelegate navigationController:navigationController willShowViewController:viewController animated:animated];
+        if ([self.tz_naviDelegate respondsToSelector:@selector(navigationController:willShowViewController:animated:)]) {
+            [self.tz_naviDelegate navigationController:navigationController willShowViewController:viewController animated:animated];
+        }
     }
 }
 

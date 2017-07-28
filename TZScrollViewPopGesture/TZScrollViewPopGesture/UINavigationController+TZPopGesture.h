@@ -4,7 +4,7 @@
 //
 //  Created by 谭真 on 2016/10/4.
 //  Copyright © 2016年 谭真. All rights reserved.
-//  2017.07.28 1.0.5版本
+//  2017.07.28 1.0.6版本
 
 #import <UIKit/UIKit.h>
 
