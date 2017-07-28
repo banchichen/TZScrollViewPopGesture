@@ -1,7 +1,13 @@
-# TZScrollViewPopGesture
-一句代码，让UIScrollView的滑动和系统侧滑手势并存，例如：在查看地图界面同时支持地图的滑动和侧滑返回。注：和FDFullscreenPopGesture库不冲突
+# 请注意
 
- ![image](http://images2015.cnblogs.com/blog/778485/201610/778485-20161005123148364-545121730.png) 
+目前该库不完善，存在一些缺陷，建议先不要使用...
+详情请见issue
+
+# TZScrollViewPopGesture
+
+一句代码，让UIScrollView的滑动和系统侧滑手势并存，例如：在查看地图界面同时支持地图的滑动和侧滑返回。注：和FDFullscreenPopGesture库不冲突
+ 
+ <img src="http://images2015.cnblogs.com/blog/778485/201610/778485-20161005123148364-545121730.png" width="40%" height="40%">
 
 ## 一. Installation 安装
 
