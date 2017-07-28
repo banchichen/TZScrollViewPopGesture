@@ -38,7 +38,7 @@
     id tz_popDelegate = objc_getAssociatedObject(self, _cmd);
     if (!tz_popDelegate) {
         tz_popDelegate = self.interactivePopGestureRecognizer.delegate;
-        objc_setAssociatedObject(self, _cmd, tz_popDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, _cmd, tz_popDelegate, OBJC_ASSOCIATION_ASSIGN);
     }
     return tz_popDelegate;
 }
@@ -48,7 +48,7 @@
     if (!tz_naviDelegate) {
         tz_naviDelegate = self.delegate;
         if (tz_naviDelegate) {
-            objc_setAssociatedObject(self, _cmd, tz_naviDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            objc_setAssociatedObject(self, _cmd, tz_naviDelegate, OBJC_ASSOCIATION_ASSIGN);
         }
     }
     return tz_naviDelegate;
@@ -125,7 +125,7 @@
         pan.maximumNumberOfTouches = 1;
         pan.delegate = self.navigationController;
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-        objc_setAssociatedObject(self, _cmd, pan, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, _cmd, pan, OBJC_ASSOCIATION_ASSIGN);
     }
     return pan;
 }
