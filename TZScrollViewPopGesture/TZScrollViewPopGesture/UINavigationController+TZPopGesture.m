@@ -29,7 +29,7 @@
     // 获取导航栏的代理
     [self.tz_naviDelegate class];
     self.delegate = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.delegate = self.tz_naviDelegate;
     });
 }
@@ -79,6 +79,10 @@
 #pragma mark - UINavigationControllerDelegate
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    // 转发给业务方代理
+    if (self.tz_naviDelegate && ![self.tz_naviDelegate isEqual:self]) {
+        [self.tz_naviDelegate navigationController:navigationController didShowViewController:viewController animated:animated];
+    }
     // 让系统的侧滑返回生效
     self.interactivePopGestureRecognizer.enabled = YES;
     if (self.childViewControllers.count > 0) {
@@ -87,6 +91,13 @@
         } else {
             self.interactivePopGestureRecognizer.delegate = nil; // 支持侧滑
         }
+    }
+}
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    // 转发给业务方代理
+    if (self.tz_naviDelegate && ![self.tz_naviDelegate isEqual:self]) {
+        [self.tz_naviDelegate navigationController:navigationController willShowViewController:viewController animated:animated];
     }
 }
 

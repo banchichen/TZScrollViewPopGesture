@@ -250,7 +250,7 @@
 				TargetAttributes = {
 					901750CF1DA4855C00F7EAA4 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = ZH74J4ERQH;
+						DevelopmentTeam = T86X98NCU2;
 						ProvisioningStyle = Automatic;
 					};
 					901750E81DA4855C00F7EAA4 = {
@@ -463,7 +463,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZH74J4ERQH;
+				DEVELOPMENT_TEAM = T86X98NCU2;
 				INFOPLIST_FILE = TZScrollViewPopGesture/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -476,7 +476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZH74J4ERQH;
+				DEVELOPMENT_TEAM = T86X98NCU2;
 				INFOPLIST_FILE = TZScrollViewPopGesture/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
