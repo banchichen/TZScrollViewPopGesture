@@ -20,6 +20,9 @@
     Method originalMethod = class_getInstanceMethod(self, @selector(viewWillAppear:));
     Method swizzledMethod = class_getInstanceMethod(self, @selector(tzPop_viewWillAppear:));
     method_exchangeImplementations(originalMethod, swizzledMethod);
+    originalMethod = class_getInstanceMethod(self, @selector(viewWillDisappear:));
+    swizzledMethod = class_getInstanceMethod(self, @selector(tzPop_viewWillDisappear:));
+    method_exchangeImplementations(originalMethod, swizzledMethod);
 }
 
 - (void)tzPop_viewWillAppear:(BOOL)animated {
@@ -32,6 +35,12 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.delegate = self.tz_naviDelegate;
     });
+}
+- (void)tzPop_viewWillDisappear:(BOOL)animated {
+    [self tzPop_viewWillDisappear:animated];
+    objc_setAssociatedObject(self, @selector(tz_popDelegate), nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(tz_naviDelegate), nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
 }
 
 - (id)tz_popDelegate {
