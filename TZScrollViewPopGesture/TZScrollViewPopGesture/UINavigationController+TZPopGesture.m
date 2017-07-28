@@ -4,7 +4,7 @@
 //
 //  Created by 谭真 on 2016/10/4.
 //  Copyright © 2016年 谭真. All rights reserved.
-//  2017.07.28 1.0.4版本
+//  2017.07.28 1.0.5版本
 
 #import "UINavigationController+TZPopGesture.h"
 #import <objc/runtime.h>
@@ -64,6 +64,10 @@
         return NO;
     }
     if (self.childViewControllers.count <= 1) {
+        return NO;
+    }
+    UIViewController *vc = self.topViewController;
+    if (vc.tz_interactivePopDisabled) {
         return NO;
     }
     // 侧滑手势触发位置
@@ -142,6 +146,14 @@
         objc_setAssociatedObject(self, _cmd, pan, OBJC_ASSOCIATION_ASSIGN);
     }
     return pan;
+}
+
+- (BOOL)tz_interactivePopDisabled {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
+- (void)setTz_interactivePopDisabled:(BOOL)disabled {
+    objc_setAssociatedObject(self, @selector(tz_interactivePopDisabled), @(disabled), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end
