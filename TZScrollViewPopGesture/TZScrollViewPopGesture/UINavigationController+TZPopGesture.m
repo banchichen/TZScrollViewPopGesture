@@ -60,6 +60,9 @@
     if ([[self valueForKey:@"_isTransitioning"] boolValue]) {
         return NO;
     }
+    if ([self.navigationController.transitionCoordinator isAnimated]) {
+        return NO;
+    }
     if (self.childViewControllers.count <= 1) {
         return NO;
     }
